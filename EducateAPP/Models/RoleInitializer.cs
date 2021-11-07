@@ -18,7 +18,7 @@ namespace EducateAPP.Models
             // но пользование данной системой бесплатно только год
 
             string adminEmail = "randytaylor.fckoff@gmail.com";
-            string password = "randytaylor7!A";
+            string password = "randytaylor7A";
 
             if (await roleManager.FindByNameAsync("admin") == null)
             {
