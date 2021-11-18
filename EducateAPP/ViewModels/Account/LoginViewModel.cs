@@ -10,7 +10,7 @@ namespace EducateAPP.ViewModels.Account
         [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
 
-        [Required(ErrorMessage = "Ввкдите пароль")]
+        [Required(ErrorMessage = "Введите пароль")]
         [Display(Name = "Пароль")]
         [DataType(DataType.Password)]
         public string Password { get; set; }
