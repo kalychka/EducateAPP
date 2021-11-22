@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using EducateAPP.Models.Data;
+using Microsoft.AspNetCore.Identity;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace EducateAPP.Models
@@ -17,5 +19,9 @@ namespace EducateAPP.Models
         [Required(ErrorMessage = "Введите отчество")]
         [Display(Name = "Отчество")]
         public string Patronymic { get; set; }
+
+        //навигационные свойства
+        [Required]
+        public ICollection<FormOfStudy> FormsOfStudy { get; set; }
     }
 }

@@ -84,6 +84,7 @@ namespace EducateApp.Controllers
             }
 
             var formOfStudy = await _context.FormsOfStudy.FindAsync(id);
+
             if (formOfStudy == null)
             {
                 return NotFound();

@@ -123,12 +123,23 @@ namespace EducateAPP.Controllers
         public async Task<IActionResult> Edit(short id, EditTypeOfTotalViewModel model)
         {
 
+            IdentityUser user = await _userManager.FindByNameAsync(HttpContext.User.Identity.Name);
+
+            if (_context.TypesOfTotals
+                .Where(f => f.IdUser == user.Id &&
+                    f.CertificateName == model.CertificateName).FirstOrDefault() != null)
+            {
+                ModelState.AddModelError("", "Введеная аттестация уже существует");
+            }
+
             TypeOfTotal typeOfTotal = await _context.TypesOfTotals.FindAsync(id);
 
             if (id != typeOfTotal.Id)
             {
                 return NotFound();
             }
+
+
 
             if (ModelState.IsValid)
             {
